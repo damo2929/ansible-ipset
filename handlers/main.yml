@@ -1,0 +1,5 @@
+- name: restart ipset
+  ansible.builtin.service:
+    name: ipset
+    state: restarted
+  become: yes

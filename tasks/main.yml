@@ -1,0 +1,35 @@
+- name: ipset | install package
+  ansible.builtin.package:
+    name: ipset-service
+    state: installed
+  tags:
+    - ipset
+
+- name: ipset | Create ipset config folder
+  file:
+    path: "{{ ipset_config_dir }}"
+    state: directory
+  tags:
+    - ipset
+
+- name: ipset | Generate ipset config
+  template:
+    src: templates/ipset.cfg
+    dest: "{{ ipset_config_dir }}/{{ ipset_save_file }}"
+  register: stat_copy_ipset
+  notify:
+    - restart ipset
+  tags:
+    - ipset
+
+- name: ipset | Start ipset service
+  systemd:
+    name: ipset
+    state: started
+    enabled: yes
+  when:
+    - ansible_os_family == "RedHat"
+    - ansible_distribution_major_version == '7'
+    - stat_copy_ipset.changed
+  tags:
+    - iptables_config_ipset

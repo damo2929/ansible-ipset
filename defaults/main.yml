@@ -1,0 +1,4 @@
+---
+ipset_config_dir: /etc/sysconfig/ipset.d
+ipset_save_file: ipset.cfg
+ipsets: []
