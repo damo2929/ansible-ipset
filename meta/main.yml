@@ -1,0 +1,14 @@
+galaxy_info:
+  author: jbeard
+  description: Manage ipset
+  company: "jbeard.dev"
+  license: "BSD"
+  min_ansible_version: 2.4
+  platforms:
+  - name: EL
+    versions:
+    - all
+  galaxy_tags:
+    - ipset
+    - iptables
+    - firewall
