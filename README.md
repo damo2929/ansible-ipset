@@ -3,7 +3,7 @@
 Manages Linux [IP sets](https://ipset.netfilter.org/) using the
 [ipset](https://ipset.netfilter.org/ipset.man.html) utility.
 
-IP sets are useful for use in firewall rules.
+IP sets are useful for firewall rules.
 
 This role works well with the [ome.iptables-raw](https://github.com/ome/ansible-role-iptables-raw)
 Ansible role for managing IPTables rules.
@@ -14,7 +14,7 @@ Include the role in an Ansible Galaxy `requirements.yml` file:
 
 ```yaml
 roles:
-  - src: https://gitlab.com/jbeard.dev/ansible/jbeard-nfs.git
+  - src: https://gitlab.com/jbeard.dev/ansible/jbeard-ipset.git
     scm: git
     name: ipset
 ```
