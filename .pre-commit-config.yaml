@@ -1,0 +1,34 @@
+repos:
+  - repo: https://github.com/pre-commit/pre-commit-hooks
+    rev: v4.1.0
+    hooks:
+      - id: check-yaml
+      - id: trailing-whitespace
+      - id: check-merge-conflict
+      - id: check-added-large-files
+      - id: forbid-new-submodules
+
+  - repo: https://github.com/ansible-community/ansible-lint
+    rev: v6.0.0
+    hooks:
+      - id: ansible-lint
+        name: Ansible-lint
+        description: This hook runs ansible-lint.
+        entry: ansible-lint --force-color .
+        language: python
+        # do not pass files to ansible-lint, see:
+        # https://github.com/ansible-community/ansible-lint/issues/611
+        pass_filenames: false
+        always_run: true
+        additional_dependencies:
+          # https://github.com/pre-commit/pre-commit/issues/1526
+          # if you want to use only the base ansible version for linting,
+          # replace 'community' extra with 'core' or just mention the exact
+          # version of Ansible you want to install as a dependency.
+          - .[community,yamllint]
+
+  - repo: https://github.com/semaphor-dk/dansabel
+    rev: 892b729aca24f6249dae0158601b137ea08577f5
+    hooks:
+      - id: dansabel
+        name: Jinja2 Linting
