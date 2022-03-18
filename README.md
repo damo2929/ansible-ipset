@@ -77,6 +77,11 @@ The maximal number of elements which can be stored in the set.
 
 Default: `65536`
 
+## Notes
+
+This role has only been tested/used on EL7, but is generic that it's likely
+usable on other distros.
+
 ## License
 
 [Zero-Clause BSD](https://opensource.org/licenses/0BSD)
