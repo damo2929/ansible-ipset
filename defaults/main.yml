@@ -1,4 +1,14 @@
+# Ansible role: ipset
+# Default variable values
 ---
+# Directory containing ipset configuration files
 ipset_config_dir: /etc/sysconfig/ipset.d
+
+# Filename for the ipset config file
 ipset_save_file: ipset.cfg
+
+# List of ipset dictionaries.
 ipsets: []
+
+# The maximal number of elements which can be stored in the set, default 65536.
+ipset_maxelem: 65536
