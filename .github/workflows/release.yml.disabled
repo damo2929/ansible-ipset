@@ -2,6 +2,10 @@
 # This workflow requires a GALAXY_API_KEY secret present in the GitHub
 # repository or organization.
 #
+# DISABLED - this workflow is disabled and the role is not released to Galaxy.
+# The mrlesmithjr.ipset role should probably be used instead:
+# https://galaxy.ansible.com/mrlesmithjr/ipset
+#
 # See: https://github.com/marketplace/actions/publish-ansible-role-to-galaxy
 # See: https://github.com/ansible/galaxy/issues/46
 
