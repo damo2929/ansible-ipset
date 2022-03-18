@@ -23,13 +23,3 @@
     - restart ipset
   tags:
     - ipset
-
-- name: ipset | Start ipset service
-  ansible.builtin.service:
-    name: ipset
-    state: started
-    enabled: true
-  when:
-    - stat_copy_ipset.changed
-  tags:
-    - iptables_config_ipset
