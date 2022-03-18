@@ -10,5 +10,5 @@ ipset_save_file: ipset.cfg
 # List of ipset dictionaries.
 ipsets: []
 
-# The maximal number of elements which can be stored in the set, default 65536.
+# The maximal number of elements which can be stored in the set.
 ipset_maxelem: 65536
