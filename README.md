@@ -43,7 +43,7 @@ Include in a playbook:
 
 ## Role Variables
 
-Default values are set in [`defaults/main.yml`](https://github.com/joshbeard/ansible-ipset/blob/master/defaults/main.yml)
+Default values are set in [`defaults/main.yml`](https://github.com/joshbeard/ansible-ipset/blob/master/defaults/main.yml).
 
 ### `ipset_config_dir`
 
