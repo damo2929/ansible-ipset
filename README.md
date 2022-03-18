@@ -3,6 +3,9 @@
 Manages Linux [IP sets](https://ipset.netfilter.org/) using the
 [ipset](https://ipset.netfilter.org/ipset.man.html) utility.
 
+__NOTICE:__ You might consider using [mrlesmithjr.ipset](https://galaxy.ansible.com/mrlesmithjr/ipset)
+instead, which is much more comprehensive than _this_ role.
+
 IP sets are useful for firewall rules.
 
 This role works well with the [ome.iptables-raw](https://github.com/ome/ansible-role-iptables-raw)
