@@ -6,16 +6,18 @@
     - ipset
 
 - name: ipset | Create ipset config folder
-  file:
+  ansible.builtin.file:
     path: "{{ ipset_config_dir }}"
     state: directory
+    mode: '0750'
   tags:
     - ipset
 
 - name: ipset | Generate ipset config
-  template:
+  ansible.builtin.template:
     src: templates/ipset.cfg
     dest: "{{ ipset_config_dir }}/{{ ipset_save_file }}"
+    mode: '0640'
   register: stat_copy_ipset
   notify:
     - restart ipset
@@ -23,10 +25,10 @@
     - ipset
 
 - name: ipset | Start ipset service
-  systemd:
+  ansible.builtin.systemd:
     name: ipset
     state: started
-    enabled: yes
+    enabled: true
   when:
     - ansible_os_family == "RedHat"
     - ansible_distribution_major_version == '7'
