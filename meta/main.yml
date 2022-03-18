@@ -1,15 +1,19 @@
+---
+dependencies: []
+
 galaxy_info:
-  role_name: jbeard_ipset
+  role_name: ipset
   author: joshbeard
-  description: Manage ipset
+  description: Manages ipset
   company: "jbeard.dev"
-  license: "BSD"
+  license: "0BSD"
   min_ansible_version: '2.4'
   platforms:
     - name: EL
       versions:
         - all
   galaxy_tags:
+    - system
     - ipset
     - iptables
     - firewall
