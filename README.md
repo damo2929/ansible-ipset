@@ -34,13 +34,13 @@ Include in a playbook:
         type: 'hash:net'
         iptype: 'inet'
         set:
-          - 192.168.0.0/24
-          - 192.168.16.0/24
+          - { value:192.168.0.0/24 comment:"local subnet"}
+          - { value:192.168.16.0/24 comment:"lab network"} 
       - name: bar_servers
         type: 'hash:net'
         iptype: inet6
         set:
-          - ::1
+          - { value:"::1" comment:"ipv6 localhost" }
   roles:
     - ipset
 ```
