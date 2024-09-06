@@ -1,4 +1,4 @@
-# Ansible Role for ipset
+# Ansible Role for ipset for both IPv4 & IPv6
 
 Manages Linux [IP sets](https://ipset.netfilter.org/) using the
 [ipset](https://ipset.netfilter.org/ipset.man.html) utility.
@@ -17,7 +17,7 @@ Include the role in an Ansible Galaxy [`requirements.yml`](https://galaxy.ansibl
 
 ```yaml
 roles:
-  - src: https://github.com/joshbeard/ansible-ipset.git
+  - src: https://github.com/damo2929/ansible-ipset.git
     version: '0.1.0'
     scm: git
     name: ipset
@@ -32,14 +32,15 @@ Include in a playbook:
     ipsets:
       - name: foo_intranet
         type: 'hash:net'
+        iptype: 'inet'
         set:
           - 192.168.0.0/24
           - 192.168.16.0/24
       - name: bar_servers
         type: 'hash:net'
+        iptype: inet6
         set:
-          - 192.168.0.4
-          - 192.168.16.7
+          - ::1
   roles:
     - ipset
 ```
@@ -68,6 +69,7 @@ The list should contain dictionaries for each ipset with the following keys:
 
 * `name` - the name of the ipset
 * `type` - the type of the ipset (e.g. `hash:net`)
+* `iptype` - the type of ip address being used inet for ipv4 and inet6 for ipv6
 * `set` - list of addresses to include in the ipset.
 
 Refer to the [example above](#usage).
